@@ -8,7 +8,7 @@ function App() {
     <div className="App">
       <h1>Conway's Game of Life</h1>
       <MainTop/>
-      <MainBttm/>
+      {/* <MainBttm/> */}
     </div>
   );
 }

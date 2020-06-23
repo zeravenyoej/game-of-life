@@ -1,13 +1,13 @@
 import React from 'react';
 import Generation from './Generation';
-import Presents from './Presets';
+import Presets from './Presets';
 import Rules from './Rules';
 
 const MainTop = () => {
   return (
     <div>
       <Generation/>
-      <Presents/>
+      {/* <Presets/> */}
       <Rules/>
     </div>
   );
