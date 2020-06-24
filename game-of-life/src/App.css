@@ -1,20 +1,29 @@
 .App {
   text-align: center;
-  background-color: #D8E0BB;
+  background-color: #fde65f;
   padding: 2%; 
   font-family: 'Sriracha';
 }
 
 h1 {
   font-size: 3.3rem;
-  text-shadow: 2px 2px slategrey;
+  text-shadow: 2px 2px rgb(178, 187, 195);
+  color: rgb(59, 59, 13);
 }
 .title {
   font-size: 2.5rem;
 }
 
+#gen {
+  text-decoration: underline white;
+}
+
 p {
   font-family: 'Roboto', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  text-align: left;
+  text-indent: 50px;
 }
 
 #gridDiv {
@@ -30,6 +39,9 @@ p {
   background-color: snow;
 }
 
+#buttonsDiv {
+  border-bottom: 1px solid snow;
+}
 
 button {
   border: 1px solid black;
@@ -58,4 +70,16 @@ section {
 .rulesDiv {
   display: flex;
   justify-content: center;
+  border-right: 1px solid white;
+}
+
+.rulesDiv, .descriptionDiv {
+  width: 49%;
+  padding: 2%;
+  margin-top: 1%;
+}
+
+#words {
+  display: flex;
+  flex-direction: row;
 }

@@ -6,7 +6,7 @@ const Buttons = (
     numCols, running, setRunning, speed, setSpeed, setGrid}) => {
 
   return (
-    <div>
+    <div id="buttonsDiv">
       <button
         onClick={() => {
           setRunning(!running);

@@ -8,7 +8,7 @@ const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, n
 
   return (
     <div>
-      <h2>Generation: {counter} </h2>
+      <h2 id="gen">Generation: {counter} </h2>
       <div
         id="gridDiv"
         style={{

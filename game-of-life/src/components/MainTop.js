@@ -1,8 +1,7 @@
 import React, { useState, useRef } from 'react';
 import Generation from './Generation';
-import Rules from './Rules';
 import produce from 'immer';
-import Description from './Description';
+import Words from './Words';
 
 let numRows = 25;
 let numCols = 25;
@@ -133,8 +132,7 @@ const MainTop = () => {
   
 
 
-      <Rules/>
-      <Description/>
+      <Words/>
     </div>
   );
 };
