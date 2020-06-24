@@ -2,9 +2,8 @@ import React from 'react';
 
 
 const Buttons = (
-  {generateEmptyGrid, runSimulation, runningRef, numRows, 
-    numCols, running, setRunning, speed, setSpeed, setGrid}) => {
-
+  {generateEmptyGrid, runSimulation, runningRef, numRows, numCols, running, setRunning, setGrid}) => {
+    
   return (
     <div id="buttonsDiv">
       <button

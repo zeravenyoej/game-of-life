@@ -3,6 +3,8 @@ import './App.css';
 import Generation from './components/Generation';
 import produce from 'immer';
 import Words from './components/Words';
+import { pulsarValues } from './components/PulsarValues';
+
 
 let numRows = 25;
 let numCols = 25;
@@ -27,6 +29,73 @@ const generateEmptyGrid = () => {
   counter = 0;
   return rows;
 }
+
+
+const getPulsarValues = () => {
+  numCols = 19
+  numRows = 19
+  const rows = generateEmptyGrid()
+  pulsarValues.forEach((x, y) => {
+    return rows[x][y] = 1
+  })
+  return rows
+}
+
+// const getPulsarValues = () => {
+//   numCols = 19
+//   numRows = 19
+//   const rows = generateEmptyGrid()
+//   rows[3][5] = 1
+//   rows[3][6] = 1
+//   rows[3][7] = 1
+//   rows[3][11] = 1
+//   rows[3][12] = 1
+//   rows[3][13] = 1
+//   rows[5][3] = 1
+//   rows[5][8] = 1
+//   rows[5][10] = 1
+//   rows[5][15] = 1
+//   rows[6][3] = 1
+//   rows[6][8] = 1
+//   rows[6][10] = 1
+//   rows[6][15] = 1
+//   rows[7][3] = 1
+//   rows[7][8] = 1
+//   rows[7][10] = 1
+//   rows[7][15] = 1
+//   rows[8][6] = 1
+//   rows[8][5] = 1
+//   rows[8][7] = 1
+//   rows[8][11] = 1
+//   rows[8][12] = 1
+//   rows[8][13] = 1
+//   rows[10][6] = 1
+//   rows[10][5] = 1
+//   rows[10][7] = 1
+//   rows[10][11] = 1
+//   rows[10][12] = 1
+//   rows[10][13] = 1
+//   rows[11][3] = 1
+//   rows[11][8] = 1
+//   rows[11][10] = 1
+//   rows[11][15] = 1
+//   rows[12][3] = 1
+//   rows[12][8] = 1
+//   rows[12][10] = 1
+//   rows[12][15] = 1
+//   rows[13][3] = 1
+//   rows[13][8] = 1
+//   rows[13][10] = 1
+//   rows[13][15] = 1
+//   rows[15][5] = 1
+//   rows[15][6] = 1
+//   rows[15][7] = 1
+//   rows[15][11] = 1
+//   rows[15][12] = 1
+//   rows[15][13] = 1
+//   return rows
+// }
+
 
 function App() {
   const [speed, setSpeed] = useState(500);
@@ -121,6 +190,15 @@ function App() {
               - columns
           </button>
         </div>
+
+        <button
+          onClick={() => {
+            counter = 0
+            setGrid(getPulsarValues());
+          }}
+        >
+          Pulsar Grid
+        </button>
       </section>
       <Words/>
     </div>
