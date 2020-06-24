@@ -1,10 +1,10 @@
-import React, { useState, useRef } from 'react';
+import React from 'react';
 import Buttons from './Buttons';
 import produce from 'immer';
 
 
 
-const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numCols, numRows, grid, running, setRunning, speed, setSpeed, setGrid}) => {
+const Generation = ({generateEmptyGrid, runSimulation, runningRef, counter, numCols, numRows, grid, running, setRunning, speed, setSpeed, setGrid}) => {
 
   return (
     <div>
@@ -34,7 +34,6 @@ const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, n
         )}
       </div>
       <Buttons
-        t={t}
         generateEmptyGrid={generateEmptyGrid}
         runSimulation={runSimulation}
         runningRef={runningRef}

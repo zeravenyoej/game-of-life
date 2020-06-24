@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const Buttons = (
-  {t, generateEmptyGrid, runSimulation, runningRef, numRows, 
+  {generateEmptyGrid, runSimulation, runningRef, numRows, 
     numCols, running, setRunning, speed, setSpeed, setGrid}) => {
 
   return (
@@ -46,33 +46,6 @@ const Buttons = (
         }}>
           Random (a little)
       </button>
-
-      <button 
-        onClick={() => {
-          if (running) { 
-            clearTimeout(t);
-            setSpeed(() => {
-              if (speed <= 0) return; 
-              return speed - 50;
-            });
-            runSimulation();
-          }}}>
-          Speed it up
-      </button>
-
-      <button 
-        onClick={() => {
-          if (running) { 
-            clearTimeout(t);
-            setSpeed(() => {
-              if (speed <= 0) return; 
-              return speed + 50;
-            });
-            runSimulation();
-          }}}>
-          Slow it down
-      </button>
-
     </div>
   );
 };
