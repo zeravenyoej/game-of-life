@@ -2,6 +2,7 @@ import React, { useState, useRef } from 'react';
 import Generation from './Generation';
 import Rules from './Rules';
 import produce from 'immer';
+import Description from './Description';
 
 let numRows = 25;
 let numCols = 25;
@@ -25,6 +26,7 @@ const generateEmptyGrid = () => {
   for (let i = 0; i < numRows; i++) {
     rows.push(Array.from(Array(numCols), () => 0));
   }
+  counter = 0;
   return rows;
 }
 
@@ -86,7 +88,53 @@ const MainTop = () => {
         speed={speed}
         setSpeed={setSpeed}
       />
+      
+
+      <section>
+          <button 
+            className="add"
+            onClick={() => {
+              numRows +=1
+              setGrid(generateEmptyGrid())
+              counter = 0
+            }}>
+              + rows
+          </button>
+          <button 
+            onClick={() => {
+              numRows -=1
+              setGrid(generateEmptyGrid())
+              counter = 0
+            }}>
+              - rows
+          </button>
+
+
+        <div id="cols" className="dimensions">
+          <button 
+            className="add"
+            onClick={() => {
+              numCols +=1
+              setGrid(generateEmptyGrid())
+              counter = 0
+            }}>
+              + columns
+          </button>
+          <button 
+            onClick={() => {
+              numCols -=1
+              setGrid(generateEmptyGrid())
+              counter = 0
+            }}>
+              - columns
+          </button>
+        </div>
+      </section>
+  
+
+
       <Rules/>
+      <Description/>
     </div>
   );
 };

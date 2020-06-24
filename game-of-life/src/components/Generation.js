@@ -10,6 +10,7 @@ const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, n
     <div>
       <h2>Generation: {counter} </h2>
       <div
+        id="gridDiv"
         style={{
           display: "grid",
           gridTemplateColumns: `repeat(${numCols}, 21px)`
@@ -18,6 +19,7 @@ const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, n
         {grid.map((rows, i) => 
           rows.map((col, k) => (
             <div
+              id="grid"
               key={`${i}-${k}`}
                 onClick={() => {
                   if(running) return; 
@@ -27,12 +29,7 @@ const Generation = ({t, generateEmptyGrid, runSimulation, runningRef, counter, n
                   setGrid(newGrid);
                   counter += 1;
                 }}
-              style={{                           
-                width: 20,
-                height: 20,
-                backgroundColor: grid[i][k] ? "black" : "",
-                border: "solid 1px black"
-              }}/>
+              style={{backgroundColor: grid[i][k] ? "black" : ""}}/>
           ))
         )}
       </div>

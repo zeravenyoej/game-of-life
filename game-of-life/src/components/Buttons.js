@@ -1,6 +1,10 @@
 import React from 'react';
 
-const Buttons = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numRows, numCols, grid, running, setRunning, speed, setSpeed, setGrid}) => {
+
+const Buttons = (
+  {t, generateEmptyGrid, runSimulation, runningRef, numRows, 
+    numCols, running, setRunning, speed, setSpeed, setGrid}) => {
+
   return (
     <div>
       <button
@@ -17,7 +21,6 @@ const Buttons = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numR
       <button 
         onClick={() => {
           setGrid(generateEmptyGrid())
-          counter = 0
         }}>
           Clear
       </button>
@@ -29,7 +32,6 @@ const Buttons = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numR
             rows.push(Array.from(Array(numCols), () => Math.random() > 0.7 ? 1 : 0));
           }
           setGrid(rows);
-          counter +=1
         }}>
           Random (a lot)
       </button>
@@ -41,45 +43,8 @@ const Buttons = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numR
             rows.push(Array.from(Array(numCols), () => Math.random() > 0.9 ? 1 : 0));
           }
           setGrid(rows);
-          counter +=1
         }}>
           Random (a little)
-      </button>
-
-      <button 
-        onClick={() => {
-          numRows +=1
-          setGrid(generateEmptyGrid())
-          counter = 0
-        }}>
-          Add rows
-      </button>
-
-      <button 
-        onClick={() => {
-          numRows -=1
-          setGrid(generateEmptyGrid())
-          counter = 0
-        }}>
-          Delete rows
-      </button>
-
-      <button 
-        onClick={() => {
-          numCols +=1
-          setGrid(generateEmptyGrid())
-          counter = 0
-        }}>
-          Add columns
-      </button>
-
-      <button 
-        onClick={() => {
-          numCols -=1
-          setGrid(generateEmptyGrid())
-          counter = 0
-        }}>
-          Delete columns
       </button>
 
       <button 
@@ -99,7 +64,10 @@ const Buttons = ({t, generateEmptyGrid, runSimulation, runningRef, counter, numR
         onClick={() => {
           if (running) { 
             clearTimeout(t);
-            setSpeed(speed + 50);
+            setSpeed(() => {
+              if (speed <= 0) return; 
+              return speed + 50;
+            });
             runSimulation();
           }}}>
           Slow it down
