@@ -70,7 +70,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Conway'sGame of Life</h1>
+      <h1>Conway's Game of Life</h1>
       <Generation
         generateEmptyGrid={generateEmptyGrid}
         runSimulation={runSimulation}
