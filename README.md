@@ -1,5 +1,9 @@
 # game-of-life
-testing testing 123
+A website to visualize Conway's Game of Life algorithm in cell automation.
+
+Tech Stack
+* React
+* Immer
 
 
 two arrays are used: 
