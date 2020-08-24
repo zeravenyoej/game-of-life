@@ -5,21 +5,13 @@ Tech Stack
 * React
 * Immer
 
+ ## Rules
+ 1. If the cell is alive and has 2 or 3 neighbors, then it remains alive. Else it dies.
+ 2. If the cell is dead and has exactly 3 neighbors, then it comes to life. Else if remains dead.
 
-two arrays are used: 
-  1) current generation
-  2) future generation
+## Cellular Automata and Turing Completeness
+Celluar Automata is the process by which properties of small components dictate how the entirety of the structure of which they are a part will behave in a subsequent generation. This process can be found in real-world biological and chemical patterns, as well as in mathematics and computer science.
 
-0 = dead cell
-1 = live cell
+ Turing completness, is a term used to describe a systems that are also automata. That is, they are self-driving. HTML by itself is not turing complete, as it is incapable of changing its own state. But when coupled with, say, Javascript, it has the potential to run by itself.
 
 
-BIRTH: 
-A 0 will stay a 0 unless it has three live neighbors, in which case it'll turn into a 1.
-
-DEATH: 
-A 1 will stay a 1 unless it has EITHER less than 2 live nieghbors, or more than 3 live neighbors, in which case it'll turn into a zero. (Translation: it'll stay alive with 2 or 3 live neighbors)
-
-Typically, two arrays are used: one to hold the current generation, and one to calculate its successor. Often 0 and 1 represent dead and live cells, respectively. A nested for loop considers each element of the current array in turn, counting the live neighbours of each cell to decide whether the corresponding element of the successor array should be 0 or 1. The successor array is displayed. For the next iteration, the arrays swap roles so that the successor array in the last iteration becomes the current array in the next iteration.
-
- there are many ways to save unnecessary computation. A cell that did not change at the last time step, and none of whose neighbours changed, is guaranteed not to change at the current time step as well, so a program that keeps track of which areas are active can save time by not updating inactive zones.[45]
